@@ -84,11 +84,6 @@ void DiskUtil::close_file() {
 
 void DiskUtil::process_io_request(IORequest* req) {
   std::cout << "process op:" << req->opcode << std::endl;
-  //if (req->opcode == OP_READ) {
-  //  pread(fd_, req->buffer, req->length, req->offset);
-  //} else if (req->opcode == OP_WRITE) {
-  //  pwrite(fd_, req->buffer, req->length, req->offset);
-  // }
   if (req->callback) {
     req->callback(0);
   }
