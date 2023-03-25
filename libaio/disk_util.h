@@ -1,5 +1,4 @@
 #include <functional>
-#include <vector>
 #include <string>
 #include <libaio.h>
 #include <thread>
@@ -29,7 +28,6 @@ private:
   int submit_io_request(IORequest* req);
   void complete_io_request(io_context_t ctx, io_event* events, int num_events);
 private:
-  std::vector<IORequest> req_queue_;
   int fd_ = -1;
   const std::string file_path_;
   const int block_size_;
