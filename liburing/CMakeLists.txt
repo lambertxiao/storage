@@ -1,5 +1,5 @@
 cmake_minimum_required (VERSION 3.5)
 project (my_storage)
 set(CMAKE_CXX_FLAGS "-Wall -std=c++11 -mavx2 -Wall -fPIC -pthread -g -ggdb -O0")
-add_executable (test_libaio main.cpp disk_util.h disk_util.cpp)
-target_link_libraries(test_libaio aio)
+add_executable (test_liburing main.cpp disk_util.h disk_util.cpp)
+target_link_libraries(test_liburing liburing.a)
